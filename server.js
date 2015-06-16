@@ -50,6 +50,6 @@ app.get('/ua', function(req, res){
 	}
 
 	// console.log(req.headers);
-    res.send('user ' + userAgent);
+    res.send('You are a(n) ' + deviceType);
 
 });
