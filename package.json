@@ -1,0 +1,21 @@
+{
+  "name": "RG_CardboardTests",
+  "version": "0.0.0",
+  "description": "Testing device parsing with node",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "na"
+  },
+  "author": "David Tracy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.4",
+    "node": "^0.0.0"
+  },
+  "devDependencies": {}
+}
