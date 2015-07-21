@@ -18,8 +18,10 @@ app.get('/', function (req, res) {
 	res.render('index.html');
 })
 
+// User agent parsing
 app.get('/ua', function(req, res){
 
+	// grab the 'user-agent' data from the request header
 	var userAgent = req.headers['user-agent'];
 
 	// regex to parse info between parentehsis' into an array
@@ -41,15 +43,20 @@ app.get('/ua', function(req, res){
 	console.log('Device Type: ' + deviceType);
 	console.log('Device OS: '+ deviceOS);
 
+	// conditionals to evaluate based on device type
 	if (deviceType == 'Macintosh'){
 		console.log("It's a Mac!");
+		res.redirect('macappstore://showUpdatesPage');
+
 	} else if (deviceType == 'iPhone'){
 		console.log("It's an iPhone!");
+		// res.send('You are an ' + deviceType);
+		res.redirect('http://appstore.com/apps/bjango');
 	} else {
 		console.log("I don't know what it is!")
+		res.send('I can\'t tell what you are ');
 	}
-
-	// console.log(req.headers);
-    res.send('You are a(n) ' + deviceType);
+	
+    
 
 });
