@@ -39,6 +39,7 @@ app.get('/ua', function(req, res){
 	// cast the second item in the array as the Device OS after removing some extra chars and whitespace
 	var deviceOS = deviceInfo[1].replace(/\)/g, '');
 	deviceOS = deviceOS.trim();
+	deviceOS = deviceOS.split(" ", 1);
 
 	console.log('Device Type: ' + deviceType);
 	console.log('Device OS: '+ deviceOS);
@@ -52,7 +53,7 @@ app.get('/ua', function(req, res){
 		console.log("It's an iPhone!");
 		// res.send('You are an ' + deviceType);
 		res.redirect('http://appstore.com/apps/bjango');
-	} else {
+	} 	else {
 		console.log("I don't know what it is!")
 		res.send('I can\'t tell what you are ');
 	}
