@@ -53,7 +53,12 @@ app.get('/ua', function(req, res){
 		console.log("It's an iPhone!");
 		// res.send('You are an ' + deviceType);
 		res.redirect('http://appstore.com/apps/bjango');
-	} 	else {
+	} else if (deviceOS == "Android"){
+		console.log("It's an Android!");
+		res.redirect('http://play.google.com/store/apps/details?id=com.google.android.apps.maps')
+	}
+
+	else {
 		console.log("I don't know what it is!")
 		res.send('I can\'t tell what you are ');
 	}
